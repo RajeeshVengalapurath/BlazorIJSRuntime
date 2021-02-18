@@ -1,0 +1,14 @@
+﻿@page "/"
+@inject IJSRuntime JS
+
+<button @onclick="Clicked">Click</button>
+<p>@MyNumber</p>
+
+@code{
+    public int MyNumber { get; set; }
+
+    async Task Clicked()
+    {
+        MyNumber = await JS.InvokeAsync<int>("myFunction", "test");
+    }
+}
