@@ -1,6 +1,5 @@
 ﻿@page "/"
-@inject IJSRuntime JS
-
+@inject Data.IJsInterop JS
 <button @onclick="Clicked">Click</button>
 <p>@MyNumber</p>
 
@@ -9,6 +8,6 @@
 
     async Task Clicked()
     {
-        MyNumber = await JS.InvokeAsync<int>("myFunction", "test");
+        MyNumber = await JS.CallMyFunction("test");
     }
 }

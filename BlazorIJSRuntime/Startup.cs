@@ -28,7 +28,7 @@ namespace BlazorIJSRuntime
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+            services.AddScoped<IJsInterop, JsInterop>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
